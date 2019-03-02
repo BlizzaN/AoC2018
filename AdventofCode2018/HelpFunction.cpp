@@ -27,7 +27,7 @@ double HelpFunction::delta(chrono::time_point<chrono::steady_clock> start, chron
 	return chrono::duration_cast<chrono::milliseconds>(stop - start).count();
 }
 
-vector<string> HelpFunction::splitString(string &s, string &delimiter)
+vector<string> HelpFunction::splitString(string s, string delimiter)
 {
 	auto start = 0U;
 	auto end = s.find(delimiter);
@@ -38,7 +38,6 @@ vector<string> HelpFunction::splitString(string &s, string &delimiter)
 		start = end + delimiter.length();
 		end = s.find(delimiter, start);
 	}
-
 	results.push_back(s.substr(start, end));
 
 	return results;

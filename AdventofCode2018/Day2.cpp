@@ -24,8 +24,8 @@ void Day2::readFileAndCount() {
 		for (int i = 0; i < str.size(); i++) {
 			char c = str[i];
 			map[c]++;
-				
 		}
+
 		unordered_map<char, int>::iterator it;
 		for (it = map.begin(); it != map.end(); it++) {
 			cout << "key: " << it->first << " Value: " << it->second << endl;
@@ -38,8 +38,6 @@ void Day2::readFileAndCount() {
 				hasThree = false;
 			}
 		}
-		
-		
 		map.clear();
 	}
 	cout << "Answer: " << (two * three) << endl;
@@ -50,8 +48,6 @@ void Day2::countDiffer() {
 	auto start = HelpFunction::start();
 	string str1, str2;
 	input = HelpFunction::openFile("inputD2.txt");
-	int two = 0;
-	int three = 0;
 	int diff = 0;
 	int index = 0;
 
@@ -74,7 +70,7 @@ void Day2::countDiffer() {
 		}
 	}
 	auto stop = HelpFunction::stop();
-	cout << "Time " << HelpFunction::delta(start, stop);
-	cout << "Answer 2: " << savestring.erase(saveindex,1) << endl;
+	cout << "Time: " << HelpFunction::delta(start, stop);
+	cout << " Answer: " << savestring.erase(saveindex,1) << endl;
 
 }
